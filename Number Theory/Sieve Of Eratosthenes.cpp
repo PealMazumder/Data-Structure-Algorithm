@@ -3,6 +3,7 @@ using namespace std;
 
 const int N = 1000001;
 bool isPrime[N];
+
 void sieve()
 {
 	for(int i = 2; i<=N; i++) 
