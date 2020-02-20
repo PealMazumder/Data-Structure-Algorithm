@@ -49,5 +49,3 @@ int main()
 	printf("%d\n",mx);
     return 0;
 }
-
-
