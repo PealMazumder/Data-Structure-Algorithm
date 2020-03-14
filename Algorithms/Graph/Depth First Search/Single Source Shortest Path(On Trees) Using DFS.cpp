@@ -1,3 +1,17 @@
+/*
+	Sample Input:
+		6 5
+		1 2
+		2 3
+		2 4
+		4 5
+		4 6
+		2
+		
+	output:
+		1 0 1 1 2 2
+		
+*/
 #include<bits/stdc++.h>
 #define pb(x)						push_back(x)
 using namespace std;
