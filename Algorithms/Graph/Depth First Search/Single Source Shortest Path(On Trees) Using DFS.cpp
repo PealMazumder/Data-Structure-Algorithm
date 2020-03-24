@@ -12,7 +12,6 @@
 		1 0 1 1 2 2
 		
 */
-
 #include<bits/stdc++.h>
 #define pb(x)						push_back(x)
 using namespace std;
