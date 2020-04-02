@@ -1,0 +1,8 @@
+ll fx[]={ 1, -1,  0,  0};   // 4 direction
+ll fy[]={ 0,  0,  1, -1};  // 4 direction
+
+ll fx[]={ 0,  0,  1, -1, -1,  1, -1,  1};  // King's Move / 8 direction
+ll fy[]={-1,  1,  0,  0,  1,  1, -1, -1}; // King's Move / 8 direction
+
+ll fx[]={-2, -2, -1, -1,  1,  1,  2,  2};  // Knight's Move
+ll fy[]={-1,  1, -2,  2, -2,  2, -1,  1}; // Knight's Move
