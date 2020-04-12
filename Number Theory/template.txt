@@ -1,0 +1,21 @@
+//Prime Factorization
+map<int, int> primeFact(int n)
+{
+	map<int, int> mp;
+	for(int i = 2; i*i<=n; i++)
+	{
+		if(!(n%i))
+		{
+			int cnt = 0;
+			while(!(n%i))
+			{
+				cnt++;
+				n /= i;
+			}
+			mp[i] = cnt;	
+		}
+	}
+	if(n>1)	
+		mp[n] = 1;
+	return mp;
+}
