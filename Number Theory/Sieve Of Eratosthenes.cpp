@@ -9,11 +9,11 @@ void sieve()
 	vis[0] = vis[1] = true;
 	for(int i = 4; i<=N; i += 2)
 		vis[i] = true;
-	for(int i = 3; i*i<=N; i+= 2)
+	for(int i = 3; i*i<=N; i+= 2)//avoiding even numbers
 	{
 		if(!vis[i])
 		{
-			for(int j = i*i; j<=N; j += 2*i)
+			for(int j = i*i; j<=N; j += 2*i)//avoiding even multiples
 				vis[j] = true;
 		}
 	}
