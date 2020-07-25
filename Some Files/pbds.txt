@@ -1,0 +1,10 @@
+#include<bits/stdc++.h>
+#include<ext/pb_ds/assoc_container.hpp>
+using namespace std;
+using namespace __gnu_pbds;
+typedef     long long       ll;
+typedef     vector<ll>      vll;
+typedef     tree<ll,null_type,less<ll>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
+
+// *os.find_by_order(k) ; kth element
+//  os.order_of_key(k) ; number of element less than k 
