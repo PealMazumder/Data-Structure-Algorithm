@@ -1,12 +1,9 @@
 #include<bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp> 
-#include <ext/pb_ds/tree_policy.hpp>
-
+#include <ext/pb_ds/tree_policy.hpp> 
 using namespace std;
 using namespace __gnu_pbds;
-typedef     long long       ll;
-typedef     vector<ll>      vll;
-typedef     tree<ll,null_type,less<ll>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;
+template<class T> using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
 
 // *os.find_by_order(k) ; kth element
 //  os.order_of_key(k) ; number of element less than k 
