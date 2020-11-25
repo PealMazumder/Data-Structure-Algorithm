@@ -1,10 +1,11 @@
 #include<bits/stdc++.h>
+#define ll long long
 using namespace std;
 
-void primeFact(int n)
+vector<pair<ll, ll> > primeFact(ll n)
 {
-	bool ck = false;
-	for(int i = 2; i*i<=n; i++)
+	vector<pair<ll, ll> > pf;
+	for(ll i = 2; i*i<=n; i++)
 	{
 		if(!(n%i))
 		{
@@ -13,27 +14,23 @@ void primeFact(int n)
 			{
 				cnt++;
 				n /= i;
-			}
-			(!ck) ? printf("(%d^%d)",i,cnt), ck = true : printf("*(%d^%d)",i,cnt);
-//			if(!ck)
-//			{
-//				printf("(%d^%d)",i,cnt);
-//				ck = true;
-//			}
-//			else
-//				printf("*(%d^%d)",i,cnt);	
+			}	
+			pf.push_back({i, cnt});
 		}
 	}
 	if(n>1)
-		(!ck) ? printf("(%d^1)",n) : printf("*(%d^1)",n);	
+		pf.push_back({n, 1});
+		
+	return pf;
 }
 int main()
 {
-	int n;
-	scanf("%d",&n);
-	
-	primeFact(n);
-    
+	ll n;
+	cin>>n;
+	vector<pair<ll, ll> > pf = primeFact(n);
+	for(auto x : pf)
+		cout<<x.first<<"^"<<x.second<<" ";
+	cout<<"\n";
 	return 0;
 }
 
