@@ -1,0 +1,218 @@
+git rebase:
+	Move the current branch on top of the refactor branch
+	This makes debugging easier and prevents three-way merges by transferring the completed work from one branch to another.
+	Rebasing instead of merging rewrites history and maintains linearity, making for cleaner code.
+-------------------------------------
+######Difference between git push an git fetch:
+
+	git fetch fetches remote updates but doesn't merge; git pull fetches remote updates and merges.
+	git pull instantly merges while git fetch only retrieves remote updates.
+------------------------------
+git log -p -1:
+	We can look at the changes by using git log -p -1.
+
+Github
+####To create a new branch:
+git checkout -b newbranch name
+	 The command git checkout -b <branch name> will first create a new branch and then switch to it.
+----------------------
+@@@ Pushing new branches.
+git  push -u origin newbranchname
+	We'll need to add the -u flag to create the branch upstream, which is another way of referring to remote repositories.
+	We'll also have to say that we want to push this to the origin repo, and that we're pushing the refactor branch.
+
+----------------------
+git remote:
+	git remote update will fetch the contents of all remote branches and allow us to merge the contents ourselves.
+---------------------------
+git remote -v 
+	We can look at the configuration for that remote by running git remote -v in the directory of the repo.
+---------------------------
+git remote show origin:
+	If we want to get even more information about our remote, we can call git remote show origin.
+---------------------------
+git checkout newBranchname:
+	To create a local branch for it, we can run git checkout experimental.
+	When we checked out the experimental branch, Git automatically copied the contents of the remote branch into the local branch.
+---------------------------
+git add -p 
+	to look at the changes we made and accept them.
+
+------------------------------
+git branch -r:	
+	We could have a look at the remote branches that our Git repo is currently tracking by running git branch -r.
+---------------------------
+git fetch:
+	To sync the data, we use the git fetch command.
+	This command copies the commits done in the remote repository to the remote branches, so we can see what other people have committed.
+------------------------------
+git checkout/ git log 
+We can run git checkout on these branches to see the working tree, and we can run git log to see the commit history.
+----------------------------------
+git log origin/master:
+	to look at the current commits in the remote repo by running git log origin/master.
+
+
+Git
+
+switch branch:
+git checkout master
+
+delete Branch:
+git branch // to check the current working branch
+	new_branch
+git branch -d new_branch// new_branch is a branch 	which we are going to delete.
+
+Merging:
+	Merging is the term that Git uses for combining branch data and history together. 
+	Git uses two different algorithms to perform a merge, fast-forward and three-way merge
+
+stop merge:
+    git merge --abort
+	If you want to throw the merge away and start over, you can use the git merge --abort command as an escape hatch.
+
+This will stop the merge and reset the files in your working tree back to the previous commit before the merge ever happened.
+
+log --graph --oneline
+	The commandgit log --graph --oneline shows a summarized view of the commit history for a repo.
+
+git merge --abort
+	If there are merge conflicts, the --abort flag can be used to abort the merge action
+
+Q>.
+What's the advantage of Git throwing a merge conflict error in cases of overlap?
+
+
+It prevents loss of work if two lines overlap.
+
+Correct 
+Nice job! If two lines have differences Git is unsure about, it's best we decide than risk losing work forever.
+
+diff
+diff is used to find differences between two files. On its own, it’s a bit hard to use; instead, use it with diff -u to find lines which differ in two files:
+
+diff -u
+diff -u is used to compare two files, line by line, and have the differing lines compared side-by-side in the same output
+
+Patch
+Patch is useful for applying file differences. See the below example, which compares two files. The comparison is saved as a .diff file, which is then patched to the original file!
+
+
+diff -u first_file second_file //To see the differences between of two file.
+diff -u oldfile newfile > change.diff //To create a diff file
+patch oldfile < change.diff /// To fix problems in oldfile
+
+
+git config --global user.email "peal6614@gmail.com"
+git config --global user.name "My name"
+
+The git directory contains all the changes and their history and the working tree contains the current versions of the files.
+
+The git directory acts as a database for all the changes tracked in Git and the working tree acts as a sandbox where we can edit the current versions of the files.
+
+git init // to create a repository
+git status
+git add filename
+git commit -m 'message'
+
+//Commit messages
+(
+A short description of the change (up to 50 characters), followed by one or more paragraphs giving more details of the change (if needed).
+
+)
+15 word 
+blank line
+up to 72 character
+
+Commit message style guide for Git
+
+The first line of a commit message serves as a summary.  When displayed
+on the web, it's often styled as a heading, and in emails, it's
+typically used as the subject.  As such, you should capitalize it and
+omit any trailing punctuation.  Aim for about 50 characters, give or
+take, otherwise it may be painfully truncated in some contexts.  Write
+it, along with the rest of your message, in the imperative tense: "Fix
+bug" and not "Fixed bug" or "Fixes bug".  Consistent wording makes it
+easier to mentally process a list of commits.
+
+Oftentimes a subject by itself is sufficient.  When it's not, add a
+blank line (this is important) followed by one or more paragraphs hard
+wrapped to 72 characters.  Git is strongly opinionated that the author
+is responsible for line breaks; if you omit them, command line tooling
+will show it as one extremely long unwrapped line.  Fortunately, most
+text editors are capable of automating this.
+
+git log // to see the git commit messsages
+
+
+Skipping the Staging area:
+	git commit -a
+		A shortcut to stage any changes to tracked files and commit them in one step.
+
+Git HEAD:
+	Git uses the head alias to represent the currently checked out snapshot of your project.
+
+git show id
+	Taking the commit ID, git show will show information about the commit and its associated patch.
+
+
+git log -p // p for patch
+
+
+git log --stat
+
+git add -p // When we use this flag, git will show us the change being added and ask us if we want to stage it or not.
+
+
+git diff -- staged ///to see the changes that are staged but not committed.
+
+git diff ///shows only unstaged changes by default.
+
+git mv ///command to rename files in the repository.
+
+You can remove files from your repository with the git rm command, which will stop the file from being tracked by git and remove it from the git directory.
+
+.gitignore////https://gist.github.com/octocat/9257657s
+////The gitignore file is a text file that tells Git which files or folders to ignore in a project.
+
+git checkout restores files to the latest stored snapshot, reverting any changes before staging.
+
+git commit --amend ///// allows us to modify and add changes to the most recent commit.
+
+With git revert, a new commit is created with inverse changes. This cancels previous changes instead of making it as though the original commit never happened.
+
+
+SHA1 hash numbers:
+
+//They provide the consistency that is critical for distributed systems such as Git.
+
+//They are created using the commit message, date, author, and the snapshot taken of the working tree.
+
+///Git can identify a commit using the first few hash numbers as long as there is only one matching possibility.
+
+//They are composed of 40 characters.
+
+git checkout is effectively used to switch branches.
+
+git reset basically resets the repo, throwing away some changes. It’s somewhat difficult to understand, so reading the examples in the documentation may be a bit more useful.
+
+There are some other useful articles online, which discuss more aggressive approaches to resetting the repo.
+
+git commit --amend is used to make changes to commits after-the-fact, which can be useful for making notes about a given commit.
+
+git revert makes a new commit which effectively rolls back a previous commit. It’s a bit like an undo command.
+git revert will create a new commit to reverse the previous one, and is the best option for undoing commits on public branches.
+
+
+Branch
+A pointer to a particular commit.
+
+The default branch that Git creates for you when a new repository initialized is called master.
+
+// By creating a new branch, we can experiment without breaking what already works.
+
+
+
+
+
+
