@@ -66,7 +66,8 @@ int dy4[]= {0,0,1,-1};
 //int Set(int N,int pos){return N=N | (1<<pos);}
 //int reset(int N,int pos){return N= N & ~(1<<pos);}
 //bool check(int N,int pos){return (bool)(N & (1<<pos));}
-bool isPowerOfTwo (ll x) {return x && (!(x&(x-1)));} 
+bool isPowerOfTwo (ll x) {return x && (!(x&(x-1)));}
+int Toggle(int N, int pos){return N ^= 1 << pos;}
 /*------------------------------------------------*/
 ```
 
