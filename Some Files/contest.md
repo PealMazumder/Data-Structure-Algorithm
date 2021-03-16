@@ -81,8 +81,8 @@ int Toggle(int N, int pos){return N ^= 1 << pos;}
 #define		mod				1000000007
 #define		sz(c)			(int)c.size()
 #define		pb				push_back
-#define		f				first
-#define		s				second
+#define		ff				first
+#define		ss				second
 #define		mkp				make_pair
 #define		ll				long long
 #define		pii				pair<int, int>
@@ -120,6 +120,8 @@ void solve()
 }
 int main()
 {
+//	freopen("input.txt", "r", stdin);
+//	freopen("output.txt", "w", stdout);
 	ios::sync_with_stdio(false);
 	cin.tie(0);cout.tie(NULL);
 	ll t;
