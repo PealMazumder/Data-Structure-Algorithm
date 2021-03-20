@@ -4,6 +4,8 @@
 using namespace std;
 using namespace __gnu_pbds;
 template<class T> using ordered_set = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
-
+// typedef tree<double,null_type,less<double>,rb_tree_tag,tree_order_statistics_node_update> ordered_set;/// to make pair we just need to replace double to pair 
+// to make multiset we have to replacec less to less_equal 
+// to sort decending order we have to replace less to greater
 // *os.find_by_order(k) ; kth element
 //  os.order_of_key(k) ; number of element less than k 
