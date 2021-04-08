@@ -68,6 +68,7 @@ int dy4[]= {0,0,1,-1};
 //bool check(int N,int pos){return (bool)(N & (1<<pos));}
 bool isPowerOfTwo (ll x) {return x && (!(x&(x-1)));}
 int Toggle(int N, int pos){return N ^= 1 << pos;}
+int b = a & -a; // b is equal to the rightmost 1-bit in set. a = 110 then b = 10
 /*------------------------------------------------*/
 ```
 
