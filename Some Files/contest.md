@@ -18,6 +18,12 @@ int comp(pair<int, int> a, pair<int, int> b)
 }
 ```
 
+///Some Prime
+```
+//ll ar[] ={0, 3, 11, 101, 1009, 10007, 100003, 1000003, 10000019, 100000007};
+//ll arr[] ={0, 5, 17, 103, 1013, 10069, 100019, 1000033, 10000169, 999999937};
+```
+
 ```
 /// Modular arithmetic
 inline void normal(ll &a) { a %= MOD; (a < 0) && (a += MOD); }
