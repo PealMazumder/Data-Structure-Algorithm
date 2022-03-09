@@ -10,7 +10,7 @@ returns an iterator pointing to the first element in the range [first,last) whic
 ```
 
 ```
-int comp(pair<int, int> a, pair<int, int> b)
+bool comp(pair<int, int> a, pair<int, int> b)
 {
 	if(a.first == b.first)
 		return a.second < b.second;
