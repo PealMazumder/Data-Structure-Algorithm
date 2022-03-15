@@ -106,7 +106,9 @@ git log -p -1:
 	We can look at the changes by using git log -p -1.
 
 <<->>  Github  <<->>
-git remote add origin link // to connect remote repository to local project
+git remote add origin url // to connect remote repository to local project
+git remote add upstream url // to connect original repository ( from where i forked this repository) to my local folder
+//// One branch only create a pull request.. So we have to create different branch for different feature or issues
 
 git remote -v //to look all the url which is attached with my local folder
 	We can look at the configuration for that remote by running git remote -v in the directory of the repo.
